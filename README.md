@@ -121,6 +121,7 @@
 ## 仓库结构
 
 ```text
+CONTRIBUTING.md
 skills/
   incident-workflow-coordinator/
   log-analysis/
@@ -144,6 +145,12 @@ shared/
 scripts/
   migrate_opencode_agents_to_codex.py
 ```
+
+如果你打算把这个仓库用于团队协作，先看：
+
+- `CONTRIBUTING.md`
+- `.github/ISSUE_TEMPLATE/`
+- `.github/pull_request_template.md`
 
 ## 设计原则
 
