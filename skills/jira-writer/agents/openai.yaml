@@ -1,0 +1,6 @@
+interface:
+  display_name: "Jira Writer"
+  short_description: "Turn technical work into clean Jira-ready updates"
+  default_prompt: "Use $jira-writer to convert findings, code changes, and verification results into a concise Jira-ready update."
+policy:
+  allow_implicit_invocation: true

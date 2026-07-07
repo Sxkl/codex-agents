@@ -1,0 +1,6 @@
+interface:
+  display_name: "Root Cause Analysis"
+  short_description: "Turn symptoms and code into a proven causal chain"
+  default_prompt: "Use $root-cause-analysis to identify the most likely root cause from logs, stack traces, and repository evidence."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Log Analysis"
+  short_description: "Cluster logs and rank actionable incident patterns"
+  default_prompt: "Use $log-analysis to group logs, identify high-risk patterns, and recommend the next action."
+policy:
+  allow_implicit_invocation: true

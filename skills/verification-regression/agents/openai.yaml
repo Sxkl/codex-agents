@@ -1,0 +1,6 @@
+interface:
+  display_name: "Verification And Regression"
+  short_description: "Prove a patch with focused tests and targeted checks"
+  default_prompt: "Use $verification-regression to verify a change with focused regression checks and explicit residual risk."
+policy:
+  allow_implicit_invocation: true

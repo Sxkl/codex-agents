@@ -1,0 +1,6 @@
+interface:
+  display_name: "Code Fix"
+  short_description: "Apply minimal, safe, and verifiable patches"
+  default_prompt: "Use $code-fix to implement a focused patch for a known issue and state the remaining risk."
+policy:
+  allow_implicit_invocation: true

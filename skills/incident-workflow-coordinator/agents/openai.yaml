@@ -1,0 +1,6 @@
+interface:
+  display_name: "Incident Workflow Coordinator"
+  short_description: "Route multi-step incident work across the right skills"
+  default_prompt: "Use $incident-workflow-coordinator to route an incident across analysis, fix, review, verification, and reporting."
+policy:
+  allow_implicit_invocation: true
