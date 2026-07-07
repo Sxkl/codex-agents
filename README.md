@@ -66,6 +66,34 @@
 - `hotfix-fastlane`
   负责把一次生产 hotfix 从日志到修复再到输出整合成标准化闭环。
 
+- `service-context-loader`
+  负责按服务名加载技术栈、常见故障模式和分析优先级，减少每次排障都从零建上下文。
+
+- `incident-retro-writer`
+  负责把一次故障处理过程整理成复盘摘要、经验结论和后续动作。
+
+## 新增的厚资产能力
+
+这套仓库现在已经不只是 skill 集合，而是补了几层关键资产：
+
+- `shared/`
+  - 服务画像
+  - 严重级别矩阵
+  - 统一 incident 输出 schema
+- `references/`
+  - Java/Spring incident 模式
+  - 审查 checklist
+  - 验证 checklist
+  - 日志质量 checklist
+- `workflows/`
+  - hotfix-fastlane 标准流程
+- `examples/`
+  - timeout、Feign null、Redis lock、retro 示例
+- `.github/ISSUE_TEMPLATE/`
+  - incident / feature 请求模板
+- `docs/BENCHMARKS.md`
+  - 对比普通 prompt 和 workflow-first 技能体系的差异
+
 ## 推荐使用链路
 
 如果你是在处理生产问题，推荐按下面顺序使用：
@@ -93,11 +121,15 @@ skills/
   verification-regression/
   jira-writer/
   hotfix-fastlane/
+  service-context-loader/
+  incident-retro-writer/
 docs/
   ARCHITECTURE.md
   ROADMAP.md
+  BENCHMARKS.md
 examples/
 shared/
+.github/
 scripts/
   migrate_opencode_agents_to_codex.py
 ```
@@ -179,6 +211,7 @@ scripts/
 - Java / Spring 故障排查 reference
 - Redis / Feign / MyBatis / 事务 / 并发检查模板
 - incident retro / postmortem 输出能力
+- issue template 和 benchmark 示例
 
 详细规划见：
 

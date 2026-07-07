@@ -28,7 +28,11 @@ This skill is optimized for the current Codex session default model.
 
 ## References
 
-- For Java/Spring production incidents, read `./references/java-spring-incident-patterns.md` when the repo uses Spring MVC, Feign, Redis, MyBatis, scheduled jobs, or transactions.
+- Start with `./references/java-spring-incident-patterns.md` for the broad Java/Spring incident map.
+- Read `./references/feign-failure-patterns.md` when the symptom involves downstream RPC, gateway forwarding, deserialization, or null response contracts.
+- Read `./references/redis-lock-patterns.md` when the failure may involve distributed locks, TTL handling, idempotency, or retry storms.
+- Read `./references/mybatis-schema-drift-patterns.md` when the failure may involve SQL mapping, schema drift, enum/value mismatch, or deployment order.
+- Read `./references/transaction-concurrency-patterns.md` when the incident hints at transaction boundaries, duplicate writes, race conditions, or inconsistent reads.
 
 ## Output
 

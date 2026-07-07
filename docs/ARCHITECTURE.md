@@ -30,6 +30,11 @@
 ### Reporting
 
 - `jira-writer`
+- `incident-retro-writer`
+
+### Context loading
+
+- `service-context-loader`
 
 ### Shared assets
 

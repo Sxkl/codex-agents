@@ -1,0 +1,6 @@
+interface:
+  display_name: "Incident Retro Writer"
+  short_description: "Turn incident handling into concise lessons and actions"
+  default_prompt: "Use $incident-retro-writer to summarize an incident into root cause, response, lessons learned, and follow-up actions."
+policy:
+  allow_implicit_invocation: true

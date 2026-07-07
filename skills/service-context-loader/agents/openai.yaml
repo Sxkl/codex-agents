@@ -1,0 +1,6 @@
+interface:
+  display_name: "Service Context Loader"
+  short_description: "Load service traits and likely incident patterns fast"
+  default_prompt: "Use $service-context-loader to load service-specific context before incident analysis or code review."
+policy:
+  allow_implicit_invocation: true
