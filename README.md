@@ -1,37 +1,60 @@
 # Codex Agents
 
-Curated Codex-native skills for incident response, root-cause analysis, code repair, review, verification, and delivery reporting.
+一套面向 Codex 的公开技能包，聚焦于生产故障排查、根因定位、代码修复、代码审查、验证回归和 Jira 输出。
 
-This repository is intentionally opinionated:
+这个仓库不是把旧 Agent 体系原样搬过来，而是做了一次面向 Codex 的深度重构：
 
-- fewer skills, stronger boundaries
-- workflow-first instead of role-sprawl
-- evidence-first outputs
-- optimized for Codex default model behavior
+- 更少的技能数量
+- 更清晰的职责边界
+- 更强的工作流组织能力
+- 更统一的输出格式
+- 更适合团队协作和长期演进
 
-## What Changed
+## 这个仓库解决什么问题
 
-This pack is not a raw migration of legacy agents.
+很多旧的多 Agent 方案都有几个典型问题：
 
-It is a curated upgrade with:
+- 技能太多，职责重叠
+- 强依赖单个模型或模型编排
+- 更像“角色集合”，不像“工作流系统”
+- 输出格式不统一，难以沉淀和复用
 
-- clear trigger boundaries between log analysis, root cause, fix, review, and verification
-- consistent output contracts across skills
-- a fastlane workflow for production hotfixes
-- public-safe packaging with no local-path leakage
+这个仓库的目标是把这些问题收敛掉，形成一套更适合 Codex 的技能体系：
 
-## Skills
+- 用 workflow 取代 role-sprawl
+- 用 evidence-first 取代拍脑袋式分析
+- 用固定 handoff 取代混乱的多角色串话
+- 用统一输出契约支撑 Jira、评审、验证和复盘
 
-- `incident-workflow-coordinator`: routes multi-step incident work across the right skills
-- `log-analysis`: clusters logs, ranks patterns, and recommends escalation
-- `root-cause-analysis`: turns logs and code into an evidence-backed causal chain
-- `code-fix`: applies minimal, verifiable patches
-- `code-review`: focuses on bugs, regressions, and risk
-- `verification-regression`: adds targeted tests and states residual risk
-- `jira-writer`: turns technical work into Jira-ready updates
-- `hotfix-fastlane`: end-to-end hotfix workflow with explicit handoffs
+## 当前包含的核心技能
 
-## Recommended Flow
+- `incident-workflow-coordinator`
+  负责把日志分析、根因定位、修复、审查、验证、输出这条链路组织起来。
+
+- `log-analysis`
+  负责对日志进行聚类、识别高风险模式、区分噪音与真正故障，并给出升级建议。
+
+- `root-cause-analysis`
+  负责把错误现象、堆栈、日志和代码路径串成因果链，输出证据支撑的根因。
+
+- `code-fix`
+  负责在问题明确后做最小、安全、可验证的代码修复。
+
+- `code-review`
+  负责面向 bug、回归、安全、事务和测试缺口做高信号审查。
+
+- `verification-regression`
+  负责补最小测试、跑最小必要校验，并明确剩余风险。
+
+- `jira-writer`
+  负责把分析结果、修复内容和验证结论整理成 Jira 可直接使用的 comment / report / closure。
+
+- `hotfix-fastlane`
+  负责把一次生产 hotfix 从日志到修复再到输出整合成标准化闭环。
+
+## 推荐使用链路
+
+如果你是在处理生产问题，推荐按下面顺序使用：
 
 1. `log-analysis`
 2. `root-cause-analysis`
@@ -40,9 +63,11 @@ It is a curated upgrade with:
 5. `verification-regression`
 6. `jira-writer`
 
-For fast production work, use `hotfix-fastlane`.
+如果你希望直接走完整热修复流程，优先使用：
 
-## Repository Layout
+- `hotfix-fastlane`
+
+## 仓库结构
 
 ```text
 skills/
@@ -61,14 +86,73 @@ scripts/
   migrate_opencode_agents_to_codex.py
 ```
 
-## Design Goals
+## 设计原则
 
-- public, portable, and reusable
-- easy to extend with service-specific references
-- suitable for team workflows, not just solo prompting
+### 1. 工作流优先
 
-## Next Moves
+这里不追求堆更多“角色”，而是优先把高频任务链路收敛成稳定流程。
 
-- add service-context loading
-- add shared incident output schemas
-- add reusable references for Java/Spring, Redis, Feign, MyBatis, and concurrency checks
+### 2. 证据优先
+
+所有分析型技能都强调：
+
+- 结论必须有证据
+- 根因必须能回到代码路径
+- 不能只根据日志表象直接拍结论
+
+### 3. 最小修复
+
+修复类技能优先做：
+
+- 最小补丁
+- 最小验证
+- 明确剩余风险
+
+避免把一次 hotfix 扩大成重构。
+
+### 4. 输出统一
+
+技能输出尽量收敛到统一结构：
+
+- `summary`
+- `evidence`
+- `confidence`
+- `next_action`
+- `risk`
+
+这样方便后续沉淀到 Jira、MR、复盘和知识库。
+
+## 适合谁使用
+
+这套技能更适合以下场景：
+
+- 生产问题排查
+- 团队内标准化 hotfix 流程
+- Java / Spring 风格服务排障
+- 代码修复后的审查与验证
+- 把技术结论整理成团队可读的产物
+
+## 和旧方案的区别
+
+这套公开仓库不是“迁移版遗产合集”，而是“精选后的 Codex 原生技能包”。
+
+它相比旧的偏 DeepSeek / 多模型 / 多角色方案，主要提升在：
+
+- 更清晰的技能边界
+- 更少但更强的技能数量
+- 更适合 Codex 默认模型行为
+- 更容易被团队理解、复用、维护
+
+## 后续规划
+
+下一步重点会继续补强：
+
+- `service-context-loader`
+- Java / Spring 故障排查 reference
+- Redis / Feign / MyBatis / 事务 / 并发检查模板
+- incident retro / postmortem 输出能力
+
+详细规划见：
+
+- `docs/ARCHITECTURE.md`
+- `docs/ROADMAP.md`
