@@ -31,3 +31,4 @@
 - add optional workflow assets for larger team environments
 - add benchmark examples showing improved signal over generic prompting
 - add stronger service-context heuristics and dynamic loading rules
+- add team-facing capability matrix and composition guidance

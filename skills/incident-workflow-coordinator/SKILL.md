@@ -24,6 +24,10 @@ This skill is optimized for the current Codex session default model.
 5. Route to `verification-regression` before closure.
 6. Route to `jira-writer` for operator-facing output.
 
+## Shared Assets
+
+- `../../shared/workflow-presets.yaml`
+
 ## Guardrails
 
 - do not skip evidence-building

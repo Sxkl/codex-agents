@@ -40,10 +40,13 @@
 
 - `shared/known-services.yaml`
 - `shared/severity-matrix.yaml`
+- `shared/workflow-presets.yaml`
 - `shared/output-schemas/incident-report.yaml`
 - skill-specific `references/`
 - skill-specific `workflows/`
 - `examples/`
+- `docs/CAPABILITY-MATRIX.md`
+- `docs/COMPOSITION-PATTERNS.md`
 
 ## Why This Shape
 
@@ -90,6 +93,12 @@ Specialized skills may add fields, but they should not omit those concepts.
 
 - severity, escalation, and output normalization
 - service inventory and context hooks
+- workflow presets for common operating paths
+
+### docs/
+
+- capability coverage and gap analysis
+- reusable composition patterns for team workflows
 
 ### workflows/
 

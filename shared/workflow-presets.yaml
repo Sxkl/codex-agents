@@ -1,0 +1,35 @@
+workflows:
+  standard_incident_triage:
+    description: "Broad incident triage with context loading, log reduction, and root-cause proof."
+    steps:
+      - service-context-loader
+      - log-analysis
+      - root-cause-analysis
+      - jira-writer
+    target:
+      - production issue
+      - timeout
+      - noisy error burst
+  hotfix_closure:
+    description: "Fast but complete hotfix path from confirmed cause to verified closure."
+    steps:
+      - service-context-loader
+      - root-cause-analysis
+      - code-fix
+      - code-review
+      - verification-regression
+      - jira-writer
+    target:
+      - hotfix
+      - regression fix
+      - narrow-scope incident patch
+  post_incident_retro:
+    description: "Summarize response quality, lessons learned, and follow-up actions."
+    steps:
+      - incident-workflow-coordinator
+      - jira-writer
+      - incident-retro-writer
+    target:
+      - incident summary
+      - retrospective
+      - lessons learned

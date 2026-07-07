@@ -93,6 +93,10 @@
   - incident / feature 请求模板
 - `docs/BENCHMARKS.md`
   - 对比普通 prompt 和 workflow-first 技能体系的差异
+- `docs/CAPABILITY-MATRIX.md`
+  - 看当前能力覆盖和下一步扩展缺口
+- `docs/COMPOSITION-PATTERNS.md`
+  - 定义多 skill 的标准组合方式
 
 ## 推荐使用链路
 
@@ -108,6 +112,11 @@
 如果你希望直接走完整热修复流程，优先使用：
 
 - `hotfix-fastlane`
+
+如果你是在做长期团队化落地，建议再配合：
+
+- `docs/CAPABILITY-MATRIX.md`
+- `docs/COMPOSITION-PATTERNS.md`
 
 ## 仓库结构
 
@@ -127,6 +136,8 @@ docs/
   ARCHITECTURE.md
   ROADMAP.md
   BENCHMARKS.md
+  CAPABILITY-MATRIX.md
+  COMPOSITION-PATTERNS.md
 examples/
 shared/
 .github/
