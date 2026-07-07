@@ -17,6 +17,10 @@ This skill is optimized for the current Codex session default model.
 4. Run the narrowest meaningful command.
 5. Report what remains unverified.
 
+## References
+
+- For Java/Spring services, read `./references/java-spring-verification-checklist.md` to avoid shallow verification.
+
 ## Coverage Targets
 
 - happy path

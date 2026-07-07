@@ -26,6 +26,10 @@ This skill is optimized for the current Codex session default model.
 5. Compare at least two plausible hypotheses.
 6. State the strongest supported conclusion and its confidence.
 
+## References
+
+- For Java/Spring production incidents, read `./references/java-spring-incident-patterns.md` when the repo uses Spring MVC, Feign, Redis, MyBatis, scheduled jobs, or transactions.
+
 ## Output
 
 - `summary`

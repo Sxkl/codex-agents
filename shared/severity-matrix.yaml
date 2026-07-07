@@ -1,0 +1,17 @@
+severity_matrix:
+  critical:
+    meaning: "Active production failure, likely user-facing or revenue-impacting."
+    patch_bias: "Prefer smallest contained fix. Avoid broad refactors."
+    verification_bias: "Require direct targeted validation and explicit residual risk."
+  high:
+    meaning: "High regression or data-risk potential without confirmed outage."
+    patch_bias: "Fix conservatively and review adjacent callers."
+    verification_bias: "Need targeted tests or clear runtime check plan."
+  medium:
+    meaning: "Material correctness, observability, or maintainability risk."
+    patch_bias: "Contained fix is preferred."
+    verification_bias: "Focused validation is usually enough."
+  low:
+    meaning: "Limited impact issue or cleanup with low operational risk."
+    patch_bias: "Do not widen scope."
+    verification_bias: "Basic check may suffice if behavior is unchanged."

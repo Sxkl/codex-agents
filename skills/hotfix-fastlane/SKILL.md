@@ -27,6 +27,16 @@ Best when you have at least one of:
 5. Run `verification-regression` to validate the change.
 6. Run `jira-writer` for operator-facing output.
 
+## Workflow Asset
+
+- Read `./workflows/hotfix-fastlane.yaml` for the standard phase sequence, stop conditions, and escalation behavior.
+
+## Shared Assets
+
+- `../../shared/known-services.yaml`
+- `../../shared/severity-matrix.yaml`
+- `../../shared/output-schemas/incident-report.yaml`
+
 ## Required Outputs
 
 - one-line incident summary

@@ -9,6 +9,7 @@
 - 更强的工作流组织能力
 - 更统一的输出格式
 - 更适合团队协作和长期演进
+- 更重的共享资产层（references / shared / workflows / examples）
 
 ## 这个仓库解决什么问题
 
@@ -25,6 +26,19 @@
 - 用 evidence-first 取代拍脑袋式分析
 - 用固定 handoff 取代混乱的多角色串话
 - 用统一输出契约支撑 Jira、评审、验证和复盘
+
+## 不只是技能，还包含什么
+
+为了避免“skill 很短但能力很薄”，仓库补了四类资产：
+
+- `references/`
+  放具体领域知识、排障模式、审查清单、验证清单
+- `shared/`
+  放跨 skill 复用的配置，例如服务清单、严重级别矩阵、输出 schema
+- `workflows/`
+  放工作流配置，描述标准 hotfix 流程和手工接管点
+- `examples/`
+  放真实风格案例，帮助快速看出这套体系和普通 prompt 的差异
 
 ## 当前包含的核心技能
 
@@ -82,6 +96,8 @@ skills/
 docs/
   ARCHITECTURE.md
   ROADMAP.md
+examples/
+shared/
 scripts/
   migrate_opencode_agents_to_codex.py
 ```
@@ -122,6 +138,17 @@ scripts/
 
 这样方便后续沉淀到 Jira、MR、复盘和知识库。
 
+### 5. 主文档短，资产层厚
+
+核心 skill 的 `SKILL.md` 保持短，避免上下文臃肿。
+
+更深的能力来自：
+
+- 引用资料
+- 共享规则
+- 标准工作流
+- 真实案例
+
 ## 适合谁使用
 
 这套技能更适合以下场景：
@@ -142,6 +169,7 @@ scripts/
 - 更少但更强的技能数量
 - 更适合 Codex 默认模型行为
 - 更容易被团队理解、复用、维护
+- 不再靠某个单模型“碰运气”，而是靠流程、资产和验证拉高稳定性
 
 ## 后续规划
 

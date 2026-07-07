@@ -1,0 +1,34 @@
+services:
+  - name: contract-service
+    stack: java-spring
+    traits:
+      - spring-mvc
+      - mybatis
+      - redis
+      - feign
+      - scheduled-jobs
+    common_incidents:
+      - feign-null-response
+      - redis-lock-leak
+      - transaction-boundary-mismatch
+      - mybatis-column-mismatch
+  - name: sim-service
+    stack: java-spring
+    traits:
+      - spring-mvc
+      - mybatis
+      - redis
+      - async-processing
+    common_incidents:
+      - timeout-spike
+      - retry-storm
+      - stale-cache
+      - downstream-null-guard
+  - name: generic-java-service
+    stack: java-spring
+    traits:
+      - spring-boot
+    common_incidents:
+      - null-safety-regression
+      - exception-mapping-gap
+      - logging-context-missing

@@ -1,0 +1,25 @@
+workflow:
+  name: hotfix-fastlane
+  phases:
+    - id: log-analysis
+      goal: Cluster logs and identify the highest-value incident signals.
+      stop_if:
+        - "No representative evidence exists."
+    - id: root-cause-analysis
+      goal: Prove the failure path with repository evidence.
+      stop_if:
+        - "The root cause remains speculative."
+    - id: code-fix
+      goal: Apply the smallest safe patch.
+      stop_if:
+        - "Patch blast radius is too high for current confidence."
+    - id: code-review
+      goal: Surface regression, safety, and operability risk.
+    - id: verification-regression
+      goal: Validate the patch with the smallest meaningful checks.
+    - id: jira-writer
+      goal: Produce operator-facing output.
+  escalation:
+    low_confidence_root_cause: "Ask for better logs, stack trace, or failing scenario."
+    weak_validation: "Mark residual risk explicitly and avoid claiming full resolution."
+    high_blast_radius: "Recommend staged rollout or human approval."

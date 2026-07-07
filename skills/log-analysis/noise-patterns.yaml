@@ -1,0 +1,21 @@
+noise_patterns:
+  - name: health-check-spam
+    match:
+      - "/actuator/health"
+      - "health check"
+    default_action: ignore
+  - name: retry-noise
+    match:
+      - "retrying"
+      - "attempt="
+    default_action: monitor
+  - name: client-abort
+    match:
+      - "broken pipe"
+      - "client abort"
+    default_action: monitor
+  - name: low-signal-info
+    match:
+      - "start processing"
+      - "finished processing"
+    default_action: review_logging

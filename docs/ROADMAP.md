@@ -8,11 +8,17 @@
 
 ## v1.1
 
+- add shared assets layer
+- add examples showing real workflow output
+- add stack-specific references for Java/Spring incident work
+
+## v1.2
+
 - add `service-context-loader`
 - add Java/Spring incident references
 - add shared examples for Feign, Redis, MyBatis, and transaction failures
 
-## v1.2
+## v1.3
 
 - add `incident-retro-writer`
 - add reusable severity matrix and escalation rules

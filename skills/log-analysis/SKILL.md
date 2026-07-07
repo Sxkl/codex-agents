@@ -32,6 +32,11 @@ This skill is optimized for the current Codex session default model.
    - fix logging
    - escalate to root cause analysis
 
+## References
+
+- For noisy-pattern filtering, read `./noise-patterns.yaml`.
+- For manual review prompts and observability heuristics, read `./references/log-quality-checklist.md`.
+
 ## Output
 
 - `summary`

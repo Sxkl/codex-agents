@@ -26,6 +26,10 @@ This skill is optimized for the current Codex session default model.
 4. Check edge cases and failure modes.
 5. Check what is and is not verified by tests.
 
+## References
+
+- For Java/Spring services, read `./references/java-spring-review-checklist.md` before finalizing high-severity findings.
+
 ## Output
 
 List findings first, ordered by severity. Then optionally add:

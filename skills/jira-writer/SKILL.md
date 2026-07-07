@@ -33,6 +33,10 @@ This skill is optimized for the current Codex session default model.
 - remaining risk
 - next step or closure
 
+## Shared Schema
+
+- When a structured incident report is needed, align with `../../shared/output-schemas/incident-report.yaml`.
+
 ## Guardrails
 
 - do not claim resolution without validation
